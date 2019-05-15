@@ -1,0 +1,24 @@
+{
+  "name": "Pietro",
+  "version": "1.0.0",
+  "description": "Pietro enables you to post a message as your account's to a Slack channel using bot instead of Slack App.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minddrop/Pietro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minddrop/Pietro/issues"
+  },
+  "homepage": "https://github.com/minddrop/Pietro#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  }
+}
