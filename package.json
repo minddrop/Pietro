@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -rf dist && webpack --mode development",
-    "start": "node dist/app.js"
+    "start": "webpack --watch --config ./webpack.config.js & nodemon ./dist/app.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "babel-loader": "^8.0.6",
+    "nodemon": "^1.19.0",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2",
     "webpack-node-externals": "^1.7.2"
