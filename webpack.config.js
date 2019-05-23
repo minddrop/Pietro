@@ -1,17 +1,33 @@
 const path = require("path");
-const nodeExternals = require("webpack-node-externals");
+const HtmlPlugin = require("html-webpack-plugin");
+const port = process.env.PORT_VUE;
 
 module.exports = {
   mode: "development",
   entry: {
-    app: "./app.js"
+    index: "./index.js"
+  },
+  devServer: {
+    port: port,
+    host: "localhost",
+    historyApiFallback: true,
+    hot: true
   },
   output: {
-    path: path.join(__dirname, "dist"),
-    filename: "[name].js"
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
+    filename: "[name].[hash].js"
   },
-  target: "node",
-  externals: [nodeExternals()],
+  plugins: [
+    new HtmlPlugin({
+      filename: "index.html",
+      template: "template/index.html",
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
+    })
+  ],
   module: {
     rules: [
       {
@@ -27,5 +43,8 @@ module.exports = {
         ]
       }
     ]
+  },
+  resolve: {
+    extensions: [".js"]
   }
 };
