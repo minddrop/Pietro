@@ -1,46 +1,50 @@
-const path = require("path");
-const HtmlPlugin = require("html-webpack-plugin");
-const port = process.env.PORT_VUE;
+const path = require('path')
+const HtmlPlugin = require('html-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const port = process.env.PORT_VUE
 
 module.exports = {
-  mode: "development",
+  mode: 'development',
   entry: {
-    index: "./index.js"
+    index: './index.js'
   },
   devServer: {
     port: port,
-    host: "localhost",
+    host: 'localhost',
     historyApiFallback: true,
     hot: true
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
-    publicPath: "/",
-    filename: "[name].[hash].js"
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    filename: '[name].[hash].js'
   },
   plugins: [
     new HtmlPlugin({
-      filename: "index.html",
-      template: "template/index.html",
+      filename: 'index.html',
+      template: 'template/index.html',
       minify: {
         removeComments: true,
         collapseWhitespace: true
       }
-    })
+    }),
+    new VueLoaderPlugin()
   ],
   module: {
     rules: [
       {
-        test: /\.js$/,
-        loader: "babel-loader"
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: { sourceMap: true }
       },
       {
-        test: /\.vue$/,
-        loader: "vue-loader"
+        test: /\.js$/,
+        loader: 'babel-loader',
+        options: { sourceMap: true }
       }
     ]
   },
   resolve: {
-    extensions: [".js", ".vue"]
+    extensions: ['.js', '.vue']
   }
-};
+}
