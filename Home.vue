@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <p>home page</p>
     <router-link to="/hello">
       <a>go hello</a>
@@ -15,3 +15,7 @@ export default {
   name: 'Home'
 }
 </script>
+
+<style lang="scss" scoped>
+@import './Home.scss';
+</style>

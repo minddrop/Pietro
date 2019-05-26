@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <p>hello page</p>
     <div>Hello vuejs. It's {{ now }}</div>
     <router-link to="/">
@@ -19,3 +19,7 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import './Hello.scss';
+</style>

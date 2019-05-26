@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <p>slack-oauth page</p>
     <router-link to="/">
       <a>go home</a>
@@ -12,3 +12,7 @@ export default {
   name: 'SlackOauth'
 }
 </script>
+
+<style lang="scss" scoped>
+@import './SlackOauth.scss';
+</style>
