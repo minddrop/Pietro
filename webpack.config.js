@@ -34,13 +34,19 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: { sourceMap: true }
+        use: [{ loader: 'vue-loader', options: { sourceMap: true } }]
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        options: { sourceMap: true }
+        use: [{ loader: 'babel-loader', options: { sourceMap: true } }]
+      },
+      {
+        test: /\.s?css$/,
+        use: [
+          'vue-style-loader',
+          { loader: 'css-loader', options: { sourceMap: true } },
+          { loader: 'sass-loader', options: { sourceMap: true } }
+        ]
       }
     ]
   },
