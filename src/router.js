@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import hello from './Hello'
-import home from './Home'
-import slackOauth from './SlackOauth'
-import notFound from './NotFound'
+import hello from './components/Hello'
+import home from './components/Home'
+import slackOauth from './components/SlackOauth'
+import notFound from './components/NotFound'
 
 Vue.use(Router)
 
