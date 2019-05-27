@@ -6,7 +6,7 @@ const port = process.env.PORT_VUE
 module.exports = {
   mode: 'development',
   entry: {
-    index: './index.js'
+    index: './src/index.js'
   },
   devServer: {
     port: port,

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -rf dist && webpack --mode development",
-    "start": "webpack-dev-server --config ./webpack.config.js & nodemon ./app.js"
+    "start": "webpack-dev-server --config ./webpack.config.js & nodemon ./src/server/app.js"
   },
   "repository": {
     "type": "git",
