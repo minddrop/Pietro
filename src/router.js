@@ -4,10 +4,11 @@ import hello from './components/Hello'
 import home from './components/Home'
 import slackOauth from './components/SlackOauth'
 import notFound from './components/NotFound'
+import token from './components/Token'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   routes: [
     {
@@ -32,3 +33,5 @@ export default new Router({
     }
   ]
 })
+
+export default router
