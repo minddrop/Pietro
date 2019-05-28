@@ -1,8 +1,10 @@
 const express = require('express')
 const morgan = require('morgan')
+const apiFallback = require('connect-history-api-fallback')
 
 const app = express()
 app.use(morgan('combined'))
+app.use(apiFallback())
 
 app.get('/hello', (req, res) => {
   res.send('hello express')
