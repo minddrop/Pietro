@@ -30,6 +30,11 @@ const router = new Router({
       path: '*',
       name: 'NotFound',
       component: notFound
+    },
+    {
+      path: '/token',
+      name: 'Token',
+      component: token
     }
   ]
 })
