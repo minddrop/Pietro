@@ -3,7 +3,9 @@
     <p>slack-oauth page</p>
     <p>Give permission to message as you.</p>
 
-    <a :href="'https://slack.com/oauth/authorize?scope='+ scope +'&client_id='+ clientId">
+    <a
+      :href="'https://slack.com/oauth/authorize?scope='+ scope +'&client_id='+ clientId +'&redirect_uri='+ redirectUrl"
+    >
       <img
         alt="Add to Slack"
         height="40"
@@ -27,7 +29,8 @@ export default {
   data() {
     return {
       clientId: '',
-      scope: 'chat:write:user'
+      scope: 'chat:write:user',
+      redirectUrl: REDIRECT_URI
     }
   }
 }

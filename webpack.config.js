@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const port = process.env.PORT_VUE
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'development',
@@ -28,7 +29,10 @@ module.exports = {
         collapseWhitespace: true
       }
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new webpack.DefinePlugin({
+      REDIRECT_URI: JSON.stringify(process.env.REDIRECT_URI)
+    })
   ],
   module: {
     rules: [
