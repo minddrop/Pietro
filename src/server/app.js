@@ -17,7 +17,7 @@ const {
   CRYPTO_ALGORITHM,
   REDIRECT_URI
 } = process.env
-const port = PORT_SERVER
+const port = PORT_SERVER || 3000
 const key = crypto.scryptSync(PASSWORD, SALT, 32)
 if (!PASSWORD || !SALT) {
   throw new Error('PASSWORD or SALT or both are not found.')
